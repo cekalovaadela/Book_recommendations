@@ -1,1 +1,6 @@
-sql_data
+sql_data/
+data/
+ml-25m/
+*.pickle
+*.sql
+*.csv
