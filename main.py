@@ -5,17 +5,16 @@ from os import listdir
 from os.path import isfile, join
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-# import seaborn as sns
 from load_sql import Loader
 
 # Load sql data to DataFrames and save them in folder "data"
 # Loader.load_sql_to_df()
 
-pd.set_option('display.max_columns', None)
+pd.set_option('display.max_columns', 10)
 
 path = '.\\data'
 
-# Find all files in dir 'path' and unpickle them
+# Find all files in dir 'path' and unpickle them to dfs
 allfiles = [f for f in listdir(path) if isfile(join(path, f))]
 print(allfiles)
 
@@ -34,10 +33,10 @@ user_ratings = dfs['user_ratings_df']
 # print(ratings.head())
 # print(user_ratings)
 
-# print(books.isnull().sum())
-# print(users.isnull().sum())
-# print(ratings.isnull().sum())
-# print(user_ratings.isnull().sum())
+print(books.isnull().sum())
+print(users.isnull().sum())
+print(ratings.isnull().sum())
+print(user_ratings.isnull().sum())
 
 print(books.shape)
 print(users.shape)
